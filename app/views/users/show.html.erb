@@ -5,6 +5,10 @@
   <h1>User details</h1>
   <p>name: <%= @user.name %></p>
   <p>email: <%= @user.email %></p>
+  <% if @user.desks %>
+    <p>Desk: <%= @user.bookings.first.desk.label%></p>
+    <p>Date: <%= @user.bookings.first.begin_date.to_s%> - <%= @user.bookings.first.end_date.to_s%></p>
+  <% end %>
 <% else %>
   <h2>Please login first.</h2>
   <%= link_to "Log in", login_path %>

@@ -1,0 +1,16 @@
+<% if logged_in? %>
+  <p>Logged in, Hi <%= current_user.name %></p>
+  <%= form_for(@booking) do |f| %>
+    <%= f.label :seat_no %>
+    <%= f.text_field :name %>
+
+    <%= f.label :from %>
+    <%= date_field :begin_date %>
+
+    <%= f.label :to %>
+    <%= date_field :end_date %>    
+
+    <%= f.submit "Book", class: "btn btn-primary" %>
+  <% end %>
+
+<% end %>
