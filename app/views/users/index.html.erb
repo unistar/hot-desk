@@ -1,0 +1,19 @@
+<% if logged_in? %>
+  <p>Logged in, Hi <%= current_user.name %></p>
+  <%= link_to "Log out", logout_path, method: :delete %>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th></th>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= link_to 'View', user_path(user) %></td>
+      </tr>
+    <% end %>
+  </table> 
+<% else %>
+  <h1>Welcome</h1>
+  <p>Welcome to Hot Desk!. Please <li><%= link_to "Log in", login_path %></li> OR <li><%= link_to "Register", new_user_path %></li></p>
+<% end %>
