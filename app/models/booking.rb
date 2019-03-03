@@ -6,14 +6,14 @@ class Booking < ApplicationRecord
 
     
   def date_ordered?
-    if begin_date >= end_date
-      errors.add(:begin_date, "begin date cannot be in front of end date")
+    if begin_date > end_date
+      errors.add(:begin_date, "cannot be in front of end date")
     end
   end
 
   def date_valid?
     if begin_date < Date.today
-      errors.add(:begin_date, "begin date cannot be in the past") 
+      errors.add(:begin_date, "cannot be in the past") 
     end
   end
 
