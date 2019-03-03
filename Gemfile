@@ -1,10 +1,4 @@
-group :development, :test do
-  source 'https://gems.ruby-china.com'
-end
-
-group :production do
-  source 'https://rubygems.org'
-end
+source 'https://rubygems.org'
 
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
