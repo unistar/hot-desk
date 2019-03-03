@@ -13,12 +13,13 @@ class BookingsController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @desks = Desk.all
-    @booking = @user.bookings.build(booking_params)
     @desk = Desk.find(params[:booking][:desk_id])
     if @user.cross_check_hit(booking_params) || @desk.cross_check_hit(booking_params)
+      @booking = @user.bookings.build(booking_params)
       render 'new'
       return
     end
+    @booking = @user.bookings.build(booking_params)
     if @booking.save
       redirect_to user_bookings_url
     else
