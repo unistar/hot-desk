@@ -38,7 +38,8 @@ class BookingsController < ApplicationController
     @desks = Desk.all
     @booking = Booking.find(params[:id])
     @desk = Desk.find(params[:booking][:desk_id])
-    if @user.cross_check_hit(booking_params) || @desk.cross_check_hit(booking_params)
+    byebug
+    if @user.cross_check_hit(booking_params, @booking&.id) || @desk.cross_check_hit(booking_params, @booking&.id)
       render 'edit'
       return
     end
