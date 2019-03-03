@@ -1,0 +1,13 @@
+<%= form_for [@user, @booking] do |f| %>
+  <%= f.label :seat_no %>
+  <%= f.select(:desk_id, @desks.collect {|p| [ p.label, p.id ] })%>
+
+  <%= f.label :from %>
+  <%= date_select :booking, :begin_date %>
+
+  <%= f.label :to %>
+  <%= date_select :booking, :end_date %>
+
+  <%= f.submit %>
+<% end %>
+

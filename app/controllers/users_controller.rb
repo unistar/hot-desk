@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @booking = @user.active_bookings.first
   end
 
   def new

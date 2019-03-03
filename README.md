@@ -1,9 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+This is a simple hot-desk app, which allows the booking of seats for onboard employees.
 
 * Ruby version - 2.5.3
 
@@ -11,17 +8,9 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
-rake db:migrate
+* Database creation: rake db:migrate
 
-* Database initialization
-rake db:seed
+* Database initialization: rake db:seed
 
-* How to run the test suite
-rails test
+* How to run the test suite: rails test
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
