@@ -1,4 +1,11 @@
-source 'https://gems.ruby-china.com'
+group :development, :test do
+  source 'https://gems.ruby-china.com'
+end
+
+group :production do
+  source 'https://rubygems.org'
+end
+
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
